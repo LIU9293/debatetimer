@@ -3,6 +3,7 @@ function boot(){
     var conname = document.getElementById('con-name').value;
     var protitle = document.getElementById('pro-title').value;
     var contitle = document.getElementById('con-title').value;
+    var round = document.getElementById('round-name').value;
     console.log(proname,conname,protitle,contitle);
     document.getElementById('boots').style.display = "none";
     document.getElementById('main').style.display = "block";
@@ -19,6 +20,8 @@ function boot(){
     document.getElementById('name-con').innerHTML = con_school_name;
     document.getElementById('title-pro').innerHTML = protitle;
     document.getElementById('title-con').innerHTML = contitle;
+    document.getElementById('round').innerHTML = round;
+    
 }
 
 var school = {

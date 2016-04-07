@@ -4,7 +4,7 @@
     
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="shortcut icon" href="include/logo.png">
+    <link rel="shortcut icon" href="include/LOGO2.png">
     <script type="text/javascript" src="js/helper.js"></script>
     <script type="text/javascript" src="js/boot.js"></script>
     <script type="text/javascript" src="js/progressbar.min.js"></script>
@@ -27,10 +27,10 @@
 <body>
     
     <!--Choose the School !!-->
-    <div class="blank" id="boots">
-        <form action="boot()">
-            <div class="wapper left" style="padding-top:100px;">
-                <h3>正方</h3>
+    <div class="background" id="boots" style="display:table">
+        <form action="boot()" style="display:table-cell;vertical-align:middle;">
+            <div class="intro">
+                <h3 style="text-align:center">正方</h3>
                 <select name="pro-name" id="pro-name">
                     <option value="aoke">澳门科技大学</option>
                     <option value="bnu">北京师范大学</option>
@@ -49,11 +49,8 @@
                     <option value="xian">西安电子科技大学</option>
                     <option value="zhongchuan">中国传媒大学</option>
                 </select>
-                <h3>正方辩题</h3>
                 <input type="text" placeholder="正方辩题" id="pro-title" required>
-            </div>
-            <div class="wapper right" style="padding-top:100px;">
-                <h3>反方</h3>
+                <h3 style="text-align:center">反方</h3>
                 <select name="con-name" id="con-name">
                     <option value="aoke">澳门科技大学</option>
                     <option value="bnu">北京师范大学</option>
@@ -72,15 +69,10 @@
                     <option value="xian">西安电子科技大学</option>
                     <option value="zhongchuan">中国传媒大学</option>
                 </select>
-                <h3>反方辩题</h3>
                 <input type="text" placeholder="反方辩题" id="con-title" required>
-            </div>
-            <div class="btn-group">
-                <div class="container">
-                <button class="btn buttom" style="color:#59421e;border:solid 2px #59421e" type="button" onclick="boot()">
-                    GO
-                </button>
-                </div>
+                <h3 style="text-align:center">环节</h3>
+                <input type="text" placeholder="小组赛" id="round-name" required>
+                <button id="btn" type="button" onclick="boot()">GO</button>
             </div>
         </form>
     </div>
@@ -103,16 +95,16 @@
                 <li><button class="btn-side" onclick="goto('step2')">反方一辩质询</button></li>
                 <li><button class="btn-side" onclick="goto('step3')">反方一辩陈词</button></li>
                 <li><button class="btn-side" onclick="goto('step4')">正方一辩质询</button></li>
-                <li><button class="btn-side" onclick="goto('step5')">正方二辩陈词</button></li>
-                <li><button class="btn-side" onclick="goto('step6')">正方二辩陈词</button></li>
+                <li><button class="btn-side" onclick="goto('step5')">正方二辩申论</button></li>
+                <li><button class="btn-side" onclick="goto('step6')">反方二辩申论</button></li>
                 <li><button class="btn-side" onclick="goto('step7')">正反二辩对辩</button></li>
                 <li><button class="btn-side" onclick="goto('step8')">正方三辩盘问</button></li>
                 <li><button class="btn-side" onclick="goto('step9')">反方三辩盘问</button></li>
                 <li><button class="btn-side" onclick="goto('step10')">正方三辩小结</button></li>
                 <li><button class="btn-side" onclick="goto('step11')">反方三辩小结</button></li>
                 <li><button class="btn-side" onclick="goto('step12')">正反双方对辩</button></li>
-                <li><button class="btn-side" onclick="goto('step13')">正方四辩结辩</button></li>
-                <li><button class="btn-side" onclick="goto('step14')">反方四辩结辩</button></li>
+                <li><button class="btn-side" onclick="goto('step13')">反方四辩结辩</button></li>
+                <li><button class="btn-side" onclick="goto('step14')">正方四辩结辩</button></li>
                 <li><button class="btn-side" onclick="goto('step15')">奇袭 － 质询</button></li>
                 <li><button class="btn-side" onclick="goto('step16')" style="border:0">奇袭 － 申论</button></li>
             </ul>
@@ -204,6 +196,12 @@
             </div>
         </div>
         
+        <!-- logo -->
+        <div class="wapper">
+            <h3 style="position:absolute;text-align:center;top:30px;width:100%;color:#eee;" id="round"></h3>
+            <img height="70px" style="display:block;position:absolute;bottom:20px;left:20px" src="include/LOGO2.png">
+        </div>
+        
         <!--Customized things-->
         <div class="wapper" style="z-index:-2;">
             <div class="container-fiuld">
@@ -236,8 +234,9 @@
         
         <!-- audio -->
         <div class="wapper" id="audio">
-            <audio src='include/bell1.m4a'></audio>
-            <audio src='include/bell2.m4a'></audio>
+            <audio src='include/bell1.m4a' id="bell1" preload="load"></audio>
+            <audio src='include/bell2.m4a' id="bell2" preload="load"></audio>
+            <audio src='include/bell3.m4a' id="bell3" preload="load"></audio>
         </div>
         
     </div>

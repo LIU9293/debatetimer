@@ -37,9 +37,13 @@ function single(){
 function single_time(){
 	if(leftsec>0){
 		document.getElementById('single-word').innerHTML = convert(leftsec);
+		document.getElementById('single-word').className = "mega shine";
 		leftsec = leftsec - 1;
-		if(leftsec == 30){
+		if(leftsec == 29){
 			audio1();
+		}
+		if(leftsec == 4){
+			audio3();
 		}
 		single_progressbar.animate(leftsec/totalsec);
 		console.log("left second is :" + leftsec);
@@ -47,6 +51,7 @@ function single_time(){
 	else{
 		audio2();
 		document.getElementById('single-word').innerHTML = "0 : 00";
+		document.getElementById('single-word').className = "mega";
 		single_progressbar.animate(0);
 		clearInterval(t);
 	}
@@ -61,13 +66,17 @@ function double(){
 }
 
 function double_time(){
-	if(leftsec_pros>0 && leftsec_cons>0){
+	if(leftsec_pros>0.1 && leftsec_cons>0.1){
 		if(side=="left"){
 			leftsec_pros = leftsec_pros - 1;
 			if(leftsec_pros == 30){
 				audio1();
 			}
+			if(leftsec_pros == 5){
+			audio3();
+			}
 			document.getElementById('double-left-word').innerHTML = convert(leftsec_pros);
+			document.getElementById('double-left-word').className = "mega shine";
 			double_left_progressbar.animate(leftsec_pros/totalsec_pros);
 		}
 		if(side=="right"){
@@ -75,33 +84,62 @@ function double_time(){
 			if(leftsec_cons == 30){
 				audio1();
 			}
+			if(leftsec_cons == 5){
+			audio3();
+			}
 			document.getElementById('double-right-word').innerHTML = convert(leftsec_cons);
+			document.getElementById('double-right-word').className = "mega shine";
 			double_right_progressbar.animate(leftsec_cons/totalsec_cons);
 		}
 	}
-	if(leftsec_pros==0 && leftsec_cons>0){
-		audio2();
+	if(leftsec_pros<0.1 && leftsec_cons>0.1){
+		if (leftsec_pros == 0){
+			audio2();
+		}
+		leftsec_pros = 0.01;
 		side=="right";
 		leftsec_cons = leftsec_cons - 1;
+		if(leftsec_cons == 30){
+				audio1();
+			}
+			if(leftsec_cons == 5){
+			audio3();
+		}
 		document.getElementById('double-left-word').innerHTML = "0 : 00";
+		document.getElementById('double-left-word').className = "mega";
 		double_left_progressbar.animate(0);
 		document.getElementById('double-right-word').innerHTML = convert(leftsec_cons);
+		document.getElementById('double-right-word').className = "mega shine";
 		double_right_progressbar.animate(leftsec_cons/totalsec_cons);
 	}
-	if(leftsec_pros>0 && leftsec_cons==0){
-		audio2();
+	if(leftsec_pros>0.1 && leftsec_cons<0.1){
+		if(leftsec_cons==0){
+			audio2();
+		}
+		leftsec_cons = 0.01;
 		side=="left";
 		leftsec_pros = leftsec_pros - 1;
+		if(leftsec_pros == 30){
+				audio1();
+			}
+			if(leftsec_pros == 5){
+			audio3();
+		}
 		document.getElementById('double-right-word').innerHTML = "0 : 00";
+		document.getElementById('double-right-word').className = "mega";
 		double_right_progressbar.animate(0);
 		document.getElementById('double-left-word').innerHTML = convert(leftsec_pros);
+		document.getElementById('double-left-word').className = "mega shine";
 		double_left_progressbar.animate(leftsec_pros/totalsec_pros);
 	}
-	if(leftsec_pros==0 && leftsec_cons==0){
+	
+	if((leftsec_pros + leftsec_cons) < 0.1){
 		audio2();
 		clearInterval(t);
 		document.getElementById('double-left-word').innerHTML = "0 : 00";
 		document.getElementById('double-right-word').innerHTML = "0 : 00";
+		document.getElementById('double-right-word').className = "mega";
+		document.getElementById('double-left-word').className = "mega";
 		double_right_progressbar.animate(0);
 		double_left_progressbar.animate(0);
 	}
@@ -111,9 +149,11 @@ function change_side(){
 	document.getElementById('btn-left').blur();
 	if(side=="left"){
 		side="right";
+		document.getElementById('double-left-word').className = "mega";
 	}
 	else {
 		side="left";
+		document.getElementById('double-right-word').className = "mega";
 	}
 }
 
@@ -135,6 +175,9 @@ function reset(){
 	document.getElementById('single-word').innerHTML = convert(totalsec);
 	document.getElementById('double-left-word').innerHTML = convert(totalsec_pros);
 	document.getElementById('double-right-word').innerHTML = convert(totalsec_pros);
+	document.getElementById('single-word').className = "mega";
+	document.getElementById('double-left-word').className = "mega";
+	document.getElementById('double-right-word').className = "mega";
 }
 
 
@@ -161,6 +204,9 @@ function convert(x)
 
 //next time and title to show on the screen. input is "step1" and "step2" or ...
 function next(a,b){
+	document.getElementById('single-word').className = "mega";
+	document.getElementById('double-left-word').className = "mega";
+	document.getElementById('double-right-word').className = "mega";
 	document.getElementById('btn-right').blur();
 	document.getElementById('btn-middle').innerHTML = "<i class='fa fa-caret-right fa-2x'></i>";
 	var thisname = game[a].name;
@@ -262,6 +308,9 @@ function next(a,b){
 
 // pause and go on....
 function pause(type){
+	document.getElementById('single-word').className = "mega";
+	document.getElementById('double-left-word').className = "mega";
+	document.getElementById('double-right-word').className = "mega";
 	document.getElementById('btn-middle').blur();
 	if(type == 'single'){
 		$('#btn-middle').attr("onclick","goon('single');");
@@ -313,12 +362,12 @@ var game ={
 	},
 	"step5":{
 		"duration":150,
-		"name":"正方二辩陈词",
+		"name":"正方二辩申论",
 		"type":"single",
 	},
 	"step6":{
 		"duration":150,
-		"name":"反方二辩质询",
+		"name":"反方二辩申论",
 		"type":"single",
 	},
 	"step7":{
@@ -353,12 +402,12 @@ var game ={
 	},
 	"step13":{
 		"duration":210,
-		"name":"正方四辩结辩",
+		"name":"反方四辩结辩",
 		"type":"single",
 	},
 	"step14":{
 		"duration":210,
-		"name":"反方四辩结辩",
+		"name":"正方四辩结辩",
 		"type":"single",
 	},
 	"step15":{
@@ -375,18 +424,12 @@ var game ={
 
 
 function audio1(){
-	var str = "<audio src='include/bell1.m4a' autoplay='autoplay'></audio>";
-	document.getElementById('audio').innerHTML = str;
-	setTimeout(function(){
-		document.getElementById('audio').innerHTML = "";
-	},3000)
+	document.getElementById('bell1').play();
 }
 function audio2(){
-	var str = "<audio src='include/bell2.m4a' autoplay='autoplay'></audio>";
-	document.getElementById('audio').innerHTML = str;
-	setTimeout(function(){
-		document.getElementById('audio').innerHTML = "";
-	},3000)
+	document.getElementById('bell2').play();
 }
-
+function audio3(){
+	document.getElementById('bell3').play();
+}
 

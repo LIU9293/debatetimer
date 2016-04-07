@@ -16,7 +16,7 @@ html, body{
     margin:0;top:0;
     position:absolute;
     background-image: url('../include/back.jpg');
-    background-size: auto;
+    background-size: cover;
     background-position: bottom;
     
     /*
@@ -134,10 +134,10 @@ html, body{
 #right-bar{display: block;margin-left: auto;margin-right:auto;width:300px;height:300px;}
 
 @media only screen and (max-width: 1280px){
-    .vertical-middle{height:270px;}
-    #middle-bar{width:270px;height:270px;}
-    #left-bar{width:270px;height:270px;}
-    #right-bar{width:270px;height:270px;}
+    .vertical-middle{height:250px;}
+    #middle-bar{width:250px;height:250px;}
+    #left-bar{width:250px;height:250px;}
+    #right-bar{width:250px;height:250px;}
 }
 
 .bar{height:100%;width:100%;}
@@ -152,12 +152,18 @@ html, body{
 
 #boots{
     z-index:999999;
-    color:#59421e;
-    background-color: #f5da93;
+    color:#ddd;
 }
 
 #main{
     display: none;
+}
+
+select, input{
+    background-color: transparent;
+    border:0px;
+    border-bottom: solid 1.3px #ddd;
+    color:#eee;
 }
 
 select{
@@ -166,16 +172,20 @@ select{
     height:40px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+    border-radius: 0;
 }
 label{
     display: block;
 }
 input{
-    color:#59421e;
     width:250px;
     height:40px;
+    margin-left: auto;margin-right: auto;display:block;
 }
 
 .school-pic{
@@ -183,4 +193,24 @@ input{
     height:100px;
     position:absolute;
     bottom:0;
+}
+
+.intro{
+    margin-left:auto;margin-right:auto;display: block;
+    max-width:500px;
+    background-color:rgba(255,255,255,0.15);
+    align:center;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:30px;
+    padding-bottom: 30px;
+}
+
+#btn{
+    background-color: transparent; height:40px; margin-top:30px;margin-bottom: 30px;width:80px;
+    color:#fff;border:solid 2px #fff;display:block;margin-left: auto;margin-right:auto;
+}
+
+.shine{
+    text-shadow: 0px 0px 15px #fff;
 }
