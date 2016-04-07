@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="shortcut icon" href="include/logo.png">
+    <script type="text/javascript" src="js/helper.js"></script>
+    <script type="text/javascript" src="js/boot.js"></script>
+    <script type="text/javascript" src="js/progressbar.min.js"></script>
+    <link href="Font-Awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/animate.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    
+    <!-- Include jQuery.mmenu files -->
+    <link type="text/css" href="jQuery.mmenu-master/dist/css/jquery.mmenu.all.css" rel="stylesheet" />
+    <script type="text/javascript" src="jQuery.mmenu-master/dist/js/jquery.mmenu.all.min.js"></script>
+    
+    <!--particleground.js-->
+    <script type="text/javascript" src="js/particleground.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Carme" />
+    
+</head>
+
+<body>
+    
+    <!--Choose the School !!-->
+    <div class="blank" id="boots">
+        <form action="boot()">
+            <div class="wapper left" style="padding-top:100px;">
+                <h3>正方</h3>
+                <select name="pro-name" id="pro-name">
+                    <option value="aoke">澳门科技大学</option>
+                    <option value="bnu">北京师范大学</option>
+                    <option value="dalian">大连理工大学</option>
+                    <option value="edinburg">爱丁堡大学</option>
+                    <option value="hku">香港大学</option>
+                    <option value="huazhong">华中科技大学</option>
+                    <option value="nash">莫纳什大学</option>
+                    <option value="nau">南京审计学院</option>
+                    <option value="nnu">南京师范大学</option>
+                    <option value="nus">新加坡国立大学</option>
+                    <option value="shangjiao">上海交通大学</option>
+                    <option value="shixin">世新大学</option>
+                    <option value="taylor">泰莱大学</option>
+                    <option value="tianjin">天津大学</option>
+                    <option value="xian">西安电子科技大学</option>
+                    <option value="zhongchuan">中国传媒大学</option>
+                </select>
+                <h3>正方辩题</h3>
+                <input type="text" placeholder="正方辩题" id="pro-title" required>
+            </div>
+            <div class="wapper right" style="padding-top:100px;">
+                <h3>反方</h3>
+                <select name="con-name" id="con-name">
+                    <option value="aoke">澳门科技大学</option>
+                    <option value="bnu">北京师范大学</option>
+                    <option value="dalian">大连理工大学</option>
+                    <option value="edinburg">爱丁堡大学</option>
+                    <option value="hku">香港大学</option>
+                    <option value="huazhong">华中科技大学</option>
+                    <option value="nash">莫纳什大学</option>
+                    <option value="nau">南京审计学院</option>
+                    <option value="nnu">南京师范大学</option>
+                    <option value="nus">新加坡国立大学</option>
+                    <option value="shangjiao">上海交通大学</option>
+                    <option value="shixin">世新大学</option>
+                    <option value="taylor">泰莱大学</option>
+                    <option value="tianjin">天津大学</option>
+                    <option value="xian">西安电子科技大学</option>
+                    <option value="zhongchuan">中国传媒大学</option>
+                </select>
+                <h3>反方辩题</h3>
+                <input type="text" placeholder="反方辩题" id="con-title" required>
+            </div>
+            <div class="btn-group">
+                <div class="container">
+                <button class="btn buttom" style="color:#59421e;border:solid 2px #59421e" type="button" onclick="boot()">
+                    GO
+                </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="blank" id="main">
+        <!-- CSS3 color background -->
+        <div class="background"></div>
+        
+        <!-- particle system  -->
+        <div id="particleground"></div>
+        
+        <!--menu button-->
+        <div class="mmm">
+            <a href="#menu"><i class="fa fa-bars fa-2x" style="color:#fff"></i></a>
+        </div>
+        
+        <nav id="menu" style="z-index:10000">
+            <ul>
+                <li><button class="btn-side" onclick="goto('step1')">正方一辩陈词</button></li>
+                <li><button class="btn-side" onclick="goto('step2')">反方一辩质询</button></li>
+                <li><button class="btn-side" onclick="goto('step3')">反方一辩陈词</button></li>
+                <li><button class="btn-side" onclick="goto('step4')">正方一辩质询</button></li>
+                <li><button class="btn-side" onclick="goto('step5')">正方二辩陈词</button></li>
+                <li><button class="btn-side" onclick="goto('step6')">正方二辩陈词</button></li>
+                <li><button class="btn-side" onclick="goto('step7')">正反二辩对辩</button></li>
+                <li><button class="btn-side" onclick="goto('step8')">正方三辩盘问</button></li>
+                <li><button class="btn-side" onclick="goto('step9')">反方三辩盘问</button></li>
+                <li><button class="btn-side" onclick="goto('step10')">正方三辩小结</button></li>
+                <li><button class="btn-side" onclick="goto('step11')">反方三辩小结</button></li>
+                <li><button class="btn-side" onclick="goto('step12')">正反双方对辩</button></li>
+                <li><button class="btn-side" onclick="goto('step13')">正方四辩结辩</button></li>
+                <li><button class="btn-side" onclick="goto('step14')">反方四辩结辩</button></li>
+                <li><button class="btn-side" onclick="goto('step15')">奇袭 － 质询</button></li>
+                <li><button class="btn-side" onclick="goto('step16')" style="border:0">奇袭 － 申论</button></li>
+            </ul>
+        </nav>
+        
+        <!--Header text
+        <div class="img">
+            <h1 class="mega" style="font-size: 4rem;">第六届世界华语辩论锦标赛</h1>
+            <h1 style="margin-top:5px"><small>The World Mandarin Debating Championship </small></h1>
+        </div>-->
+        
+        <!--Round Name-->
+        <div id="roundname">
+            <div class="container">
+                <div class="row">
+                    <h2 class="bounceIn animated" id="roundname-text" style="color:#fff">正方一辩陈词</h2>
+                </div>
+            </div>
+        </div>
+        
+        <!--Center ProgressBar-->
+        <div class="blank" id="single">
+            <div class="wapper">
+                <div id="middle">
+                    <h2 class="mega" id="single-word">3 : 00</h2>
+                </div>
+            </div>
+        </div>
+        
+        <!--Double ProgressBar-->
+        <div class="blank" id="double">
+            <div class="wapper left">
+                <div id="left" class="bounceOut animated">
+                    <h2 class="mega" id="double-left-word"></h2>
+                </div>
+            </div>
+            <div class="wapper right">
+                <div id="right" class="bounceOut animated">
+                    <h2 class="mega" id="double-right-word"></h2>
+                </div>
+            </div>
+        </div>
+        
+        <!--Button Group-->
+        <div class="btn-group">
+            <div class="container">
+                <div class="row">
+                    <div class="col-ms-12">
+                        <button class="btn buttom" id="btn-left" onclick="change_side()" disabled="true">
+                            <i class="fa fa-arrows-h fa-2x"></i>
+                        </button>
+                        <button class="btn buttom" id="btn-middle" onclick="single()" style="margin-left:30px;margin-right:30px">
+                            <i class="fa fa-caret-right fa-2x"></i>
+                        </button>
+                        <button class="btn buttom" id="btn-right" onclick="gogogo()">
+                            <i class="fa fa-angle-double-right fa-2x"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!--single progress bar-->
+        <div class="blank">
+            <div class="wapper" style="display:table;">
+                <div class="vertical-middle">
+                    <div id="middle-bar">
+                        <div id="single-progressbar" class="bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--double progress bar-->
+        <div class="blank">
+            <div class="wapper left" style="display:table;">
+                <div class="vertical-middle">
+                    <div id="left-bar">
+                        <div id="double-left-progressbar" class="bar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="wapper right" style="display:table;">
+                <div class="vertical-middle">
+                    <div id="right-bar">
+                        <div id="double-right-progressbar" class="bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--Customized things-->
+        <div class="wapper" style="z-index:-2;">
+            <div class="container-fiuld">
+                <div class="row" style="padding-top:30px;padding-bottom:30px;background-color:rgba(255,255,255,0.1);">
+                    <div class="col-xs-6">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <img id="pic-pro" class="img-circle" height="120px" width="120px" src="include/school/aoke.png" alt="">
+                            </div>
+                            <div class="col-xs-8" style="color:#eee;text-align:left">
+                                <h3 id="name-pro">正方：澳门科技大学</h3>
+                                <h3 id="title-pro">信息碎片化提升了当代人的认知水平</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="row">
+                            <div class="col-xs-8" style="color:#eee;text-align:right">
+                                <h3 id="name-con">反方：澳门科技大学</h3>
+                                <h3 id="title-con">信息碎片化降低了当代人的认知水平</h3>
+                            </div>
+                            <div class="col-xs-4">
+                                <img id="pic-con" class="img-circle" height="120px" width="120px" src="include/school/aoke.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- audio -->
+        <div class="wapper" id="audio">
+            <audio src='include/bell1.m4a'></audio>
+            <audio src='include/bell2.m4a'></audio>
+        </div>
+        
+    </div>
+    
+</body>
+
+
+<script type="text/javascript">
+
+/*global API*/
+/*global single_progressbar,double_left_progressbar,double_right_progressbar,ProgressBar*/
+jQuery(document).ready(function( $ ) {
+
+    $("#menu").mmenu({
+       "extensions": [
+          "pagedim-black",
+          "theme-dark"
+       ],
+       "navbar":{
+           "title":"请选择环节",
+       },
+       "onClick":{
+           "close":true,
+       }
+    });
+    API = $("#menu").data( "mmenu" );
+
+    var single_bar = document.getElementById('single-progressbar');
+    var double_left = document.getElementById('double-left-progressbar');
+    var double_right = document.getElementById('double-right-progressbar');
+    
+    var option = {
+        duration: 1000,
+        strokeWidth: 1,
+        color: "#fdeec9",
+        trailColor: "transparent"
+    }
+    
+    single_progressbar = new ProgressBar.Circle(single_bar, option);
+    double_left_progressbar = new ProgressBar.Circle(double_left, option);
+    double_right_progressbar = new ProgressBar.Circle(double_right, option);
+    
+    single_progressbar.animate(1);
+
+/*    
+    particleground(document.getElementById('particleground'), {
+        dotColor: 'rgba(30,30,30,0.1)',
+        lineColor: 'rgba(30,30,30,0.1)',
+        density:46000,
+        parallax:false,
+        proximity:180,
+        particleRadius:8,
+    });
+*/    
+});
+
+</script>
+
+</html>
+

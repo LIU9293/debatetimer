@@ -1,0 +1,186 @@
+html, body{
+    font-family: "Carme", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    height:100%;
+    overflow: hidden;
+}
+
+.fa-fw{
+    width:30px;
+}
+
+.background{
+    z-index: -3;
+    position:absolute;
+    height:100%;
+    width: 100%;
+    margin:0;top:0;
+    position:absolute;
+    background-image: url('../include/back.jpg');
+    background-size: auto;
+    background-position: bottom;
+    
+    /*
+    background: -webkit-radial-gradient(#4ef,#fff,#fff,#fff, #fff);
+    background: -ms-radial-gradient(#0cf,#fff, #fff);*/
+}
+
+.wapper{
+    position: absolute;top:0;bottom:0;
+    display: block;
+    text-align: center;
+    width:100%;
+    height:100%;
+    z-index:1;
+    overflow:hidden;
+    line-height: 100%;
+}
+.left{
+    width:50%;
+    left: 0px;
+}
+.right{
+    width:50%;
+    right:0px;
+}
+
+#middle{height:100%;width:100%;display:table;text-align: center;vertical-align: middle;}
+#left{height:100%;width:100%;left:0px;display:table;text-align: center;vertical-align: middle;}
+#right{height:100%;width:100%;right:0px;display:table;text-align: center;vertical-align: middle;}
+
+.blank{height:100%;width:100%;margin:0px;padding:0px;}
+
+.mega {
+    margin:0;padding:0;display: table-cell;vertical-align: middle;
+    font-size: 5rem;
+    color:#eee;
+ /*   -webkit-animation: hue 60s infinite linear;*/
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
+.buttom{
+    background-color: transparent;
+    border:solid 1px #eee;
+    color:#eee;
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+    display: inline-block;margin-left: auto;margin-right: auto;
+}
+.buttom:hover{color:#ccc;border:solid 1px #ccc;}
+.buttom:focus{color:#ccc;border:solid 1px #ccc;outline: none;}
+
+.img{
+    background-color:rgba(30,30,30,0.2);
+    padding-top:18px;padding-bottom:5px;
+    padding-left:20px;padding-right: 50px;
+    display: block;
+    position: absolute;
+    top:0px;left:25px;
+    color:#f33;
+    z-index: 50;
+}
+
+.btn-group{
+    position: absolute;
+    width:100%;
+    padding:0;
+    bottom:30px;
+    height:60px;
+    z-index:99;
+    text-align: center;
+}
+
+#roundname{
+    position:absolute;
+    bottom:140px;
+    width:100%;
+    text-align: center;
+}
+
+.mm-page{
+    height: 100%;
+}
+
+.mmm{
+    position: absolute;
+    right:30px;
+    bottom:30px;
+    z-index: 500;
+}
+
+.btn-side{
+    margin-left: 25%;
+    width:50%;
+    background-color: transparent;
+    border:0;
+    height: 60px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.vertical-middle{height:300px;display:table-cell;width:100%;vertical-align:middle;}
+
+#middle-bar{display: block;margin-left: auto;margin-right:auto;width:300px;height:300px;}
+#left-bar{display: block;margin-left: auto;margin-right:auto;width:300px;height:300px;}
+#right-bar{display: block;margin-left: auto;margin-right:auto;width:300px;height:300px;}
+
+@media only screen and (max-width: 1280px){
+    .vertical-middle{height:270px;}
+    #middle-bar{width:270px;height:270px;}
+    #left-bar{width:270px;height:270px;}
+    #right-bar{width:270px;height:270px;}
+}
+
+.bar{height:100%;width:100%;}
+
+#particleground{
+    z-index:-1;
+    overflow: hidden;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+#boots{
+    z-index:999999;
+    color:#59421e;
+    background-color: #f5da93;
+}
+
+#main{
+    display: none;
+}
+
+select{
+    display: block;
+    width:250px;
+    height:40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+label{
+    display: block;
+}
+input{
+    color:#59421e;
+    width:250px;
+    height:40px;
+}
+
+.school-pic{
+    top:5%;
+    height:100px;
+    position:absolute;
+    bottom:0;
+}
