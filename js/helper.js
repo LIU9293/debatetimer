@@ -72,9 +72,6 @@ function double_time(){
 			if(leftsec_pros == 30){
 				audio1();
 			}
-			if(leftsec_pros == 5){
-			audio3();
-			}
 			document.getElementById('double-left-word').innerHTML = convert(leftsec_pros);
 			document.getElementById('double-left-word').className = "mega shine";
 			double_left_progressbar.animate(leftsec_pros/totalsec_pros);
@@ -83,9 +80,6 @@ function double_time(){
 			leftsec_cons = leftsec_cons - 1;
 			if(leftsec_cons == 30){
 				audio1();
-			}
-			if(leftsec_cons == 5){
-			audio3();
 			}
 			document.getElementById('double-right-word').innerHTML = convert(leftsec_cons);
 			document.getElementById('double-right-word').className = "mega shine";
@@ -100,10 +94,7 @@ function double_time(){
 		side=="right";
 		leftsec_cons = leftsec_cons - 1;
 		if(leftsec_cons == 30){
-				audio1();
-			}
-			if(leftsec_cons == 5){
-			audio3();
+			audio1();
 		}
 		document.getElementById('double-left-word').innerHTML = "0 : 00";
 		document.getElementById('double-left-word').className = "mega";
@@ -121,9 +112,6 @@ function double_time(){
 		leftsec_pros = leftsec_pros - 1;
 		if(leftsec_pros == 30){
 				audio1();
-			}
-			if(leftsec_pros == 5){
-			audio3();
 		}
 		document.getElementById('double-right-word').innerHTML = "0 : 00";
 		document.getElementById('double-right-word').className = "mega";
@@ -397,7 +385,7 @@ var game ={
 	},
 	"step12":{
 		"duration":240,
-		"name":"正反双方对辩",
+		"name":"自由辩论",
 		"type":"double",
 	},
 	"step13":{
