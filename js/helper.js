@@ -31,7 +31,7 @@ function single(){
 	document.getElementById('btn-middle').blur();
 	document.getElementById('btn-middle').innerHTML = "<i class='fa fa-pause fa-2x' style='font-size: 1.4em;'></i>";
 	$('#btn-middle').attr("onclick","pause('single');");
-	t = window.self.setInterval("single_time()",1000);
+	t = window.self.setInterval(single_time,1000);
 }
 
 function single_time(){
@@ -62,7 +62,7 @@ function double(){
 	document.getElementById('btn-middle').blur();
 	document.getElementById('btn-middle').innerHTML = "<i class='fa fa-pause fa-2x' style='font-size: 1.4em;'></i>";
 	$('#btn-middle').attr("onclick","pause('double');");
-	t = window.self.setInterval("double_time()",1000);
+	t = window.self.setInterval(double_time,1000);
 }
 
 function double_time(){
@@ -315,12 +315,12 @@ function goon(type){
 	if(type=="single"){	
 		$('#btn-middle').attr("onclick","pause('single');");
 		document.getElementById('btn-middle').innerHTML = "<i class='fa fa-pause fa-2x' style='font-size: 1.4em;'></i>";
-		t = setInterval("single_time()",1000);
+		t = setInterval(single_time,1000);
 	}
 	if(type=="double"){	
 		$('#btn-middle').attr("onclick","pause('double');");
 		document.getElementById('btn-middle').innerHTML = "<i class='fa fa-pause fa-2x' style='font-size: 1.4em;'></i>";
-		t = setInterval("double_time()",1000);
+		t = setInterval(double_time,1000);
 	}
 }
 //end of pause and go on...
