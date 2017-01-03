@@ -3,7 +3,7 @@
 ### Head
 ***
 这是为第六届华语辩论锦标赛制作的单页应用(Single Page Application) － 计时器
-点击[这里](http://timer.party)可以直达
+点击[这里](http://liukai.link/debatetimer/)可以直达
 
 感谢以下项目:
 progressbar.js        -- 进度条
